@@ -92,6 +92,10 @@
                     humidityElement.textContent = data.main.humidity;
                     feelsLikeElement.textContent = data.main.feels_like;
                 })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
     </script>
 </body>
 </html>
