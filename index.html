@@ -3,8 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Weather</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
 
     </style>
 
@@ -16,6 +33,13 @@
             <input type="text" id="search-input" placeholder="Enter a city name">
             <button id="search-button">Search</button>
         </div>
+        
+        <div id="result">
+            <h2>City: <span id="city"></span></h2>
+            <h3>Time: <span id="time"></span></h3>
+            <h3>Temperature: <span id="temperature"></span>&deg;C</h3>
+            <h3>Weather: <span id="weather"></span></h3>
+            <img id="weather-icon" src="" alt="Weather Icon">
         </div>
 </body>
 </html>
