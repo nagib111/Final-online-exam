@@ -69,10 +69,29 @@
         const temperatureElement = document.getElementById('temperature');
         const weatherElement = document.getElementById('weather');
         const weatherIcon = document.getElementById('weather-icon');
-        const airQualityElement = document.getElementById('air-quality');
         const windSpeedElement = document.getElementById('wind-speed');
         const humidityElement = document.getElementById('humidity');
         const feelsLikeElement = document.getElementById('feels-like');
+
+        searchButton.addEventListener('click', () => {
+            const cityName = searchInput.value;
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`)
+                .then(response => response.json())
+                .then(data => {
+                    document.body.style.backgroundImage = `url('https://source.unsplash.com/1920x1080/?${data.weather[0].main}')`;
+
+                    cityElement.textContent = data.name;
+                    const currentTime = new Date(data.dt * 1000);
+                    timeElement.textContent = currentTime.toLocaleTimeString();
+                    temperatureElement.textContent = data.main.temp;
+                    weatherElement.textContent = data.weather[0].description;
+                    const iconUrl = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+                    weatherIcon.src = iconUrl;
+                    
+                    windSpeedElement.textContent = data.wind.speed;
+                    humidityElement.textContent = data.main.humidity;
+                    feelsLikeElement.textContent = data.main.feels_like;
+                })
     </script>
 </body>
 </html>
