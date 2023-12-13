@@ -31,24 +31,21 @@
             border: none;
             border-bottom: 2px solid #007BFF;
             border-radius: 5px;
+
             width: 70%;
             font-size: 16px;
         }
-
-
 
         #search-button {
             padding: 10px 20px;
             background-color: #007BFF;  color: #fff;
             border: none;border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
-        }
+            font-size: 16px; }
 
 
         #result {
-            text-align: center;
-        }
+            text-align: center;    }
 
         #weather-icon { width: 100px;
             height: 100px;
@@ -57,8 +54,7 @@
             margin-top: 20px;
             display: flex;
             flex-wrap: wrap;
-        justify-content: space-between;
-        }
+        justify-content: space-between;  }
         .detail-box {
             padding: 20px;
             margin: 10px;
@@ -124,6 +120,7 @@
                 <span id="visibility"></span> meters
             </div>
 
+
             <div class="detail-box">
                 <span class="detail-label">Pressure:</span>
                 <span id="pressure"></span> hPa
@@ -132,7 +129,6 @@
                 <span class="detail-label">UV Index:</span>
                 <span id="uv-index"></span>
             </div>
-
             <div class="detail-box">
                 <span class="detail-label">Precipitation:</span>
                 <span id="precipitation"></span> mm
@@ -157,12 +153,16 @@
 
         const weatherIcon = document.getElementById('weather-icon');
         const airQualityElement = document.getElementById('air-quality');
-        const windSpeedElement = document.getElementById('wind-speed');  const humidityElement = document.getElementById('humidity');
+
+        const windSpeedElement = document.getElementById('wind-speed');  
+        const humidityElement = document.getElementById('humidity');
+
         const feelsLikeElement = document.getElementById('feels-like');
 
         const visibilityElement = document.getElementById('visibility');
         const pressureElement = document.getElementById('pressure');
         const uvIndexElement = document.getElementById('uv-index');
+
         const precipitationElement = document.getElementById('precipitation');
         const sunsetElement = document.getElementById('sunset');
 
